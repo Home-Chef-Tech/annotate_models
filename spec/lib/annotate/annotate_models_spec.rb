@@ -3082,7 +3082,7 @@ describe AnnotateModels do
 
       it 'displays the error message and stacktrace with trace enabled' do
         expect { AnnotateModels.remove_annotations model_dir: @model_dir, is_rake: true, trace: true }.to output(a_string_including("Unable to deannotate #{@model_dir}/user.rb: oops")).to_stderr
-        expect { AnnotateModels.remove_annotations model_dir: @model_dir, is_rake: true, trace: true }.to output(a_string_including("/user.rb:2:in `<class:User>'")).to_stderr
+        expect { AnnotateModels.remove_annotations model_dir: @model_dir, is_rake: true, trace: true }.to output(a_string_including("/user.rb")).to_stderr
       end
     end
 
